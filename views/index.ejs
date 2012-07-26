@@ -1,0 +1,26 @@
+<html>
+<head>
+<link href='/public/graph.css' rel='stylesheet' 
+type='text/css'/>
+</head>
+
+<body>
+
+<div class="bargraph" style= "width: 365px;">
+    <ul class="bars">
+        <%for(var event in events) { %>
+          <li class="bar1 purplebar" style="height: 500px;"><%-events[event]%></li>
+        <%}%>
+
+    </ul>
+<ul class="label">
+
+        <%for(var event in events) { %>
+          <li><%-event%></li>
+        <%}%>
+</ul>
+<p class="centered">Yearly US Fruit Consumption in Tons</p> 
+</div>
+
+</body>
+</html>  

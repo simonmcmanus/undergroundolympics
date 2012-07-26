@@ -1,0 +1,164 @@
+
+
+
+<style>
+
+
+
+p {
+ margin:  .5em 0 .5em 0;
+}
+
+
+@font-face {
+font-family: scoreboard;
+src: local('Scuba OT')
+}
+
+/* Tube line colours */
+.bakerloo         {color: #FFF;     background: #AE6118;}
+.central          {color: #FFF;     background: #E41F1F;}
+.circle           {color: #113B92;    background: #F8D42D;}
+.district         {color: #FFF;     background: #007229;}
+.eastlondon {color: #113B92;    background: #F2AD41;}
+.hammersmithandcity     {color: #113B92;    background: #E899A8;}
+.jubilee          {color: #FFF;     background: #686e72;}
+.metropolitan       {color: #FFF;     background: #893267;}
+.northern         {color: #FFF;     background: #000000;}
+.piccadilly         {color: #FFF;     background: #0450A1;}
+.victoria         {color: #FFF;     background: #009FE0;}
+.waterlooandcity      {color: #113B92;    background: #70C3CE;}
+.dlr            {color: #FFF;     background: #00BBB4;}
+.overground         {color: #FFF;     background: #F86C00;}
+
+a.bakerloo:hover      {color: #FFF;     background: #AE6118; text-decoration: underline}
+a.central:hover       {color: #FFF;     background: #E41F1F; text-decoration: underline}
+a.circle:hover        {color: #113B92;    background: #F8D42D; text-decoration: underline}
+a.district:hover      {color: #FFF;     background: #007229; text-decoration: underline}
+a.eastlondon:hover      {color: #113B92;    background: #F2AD41; text-decoration: underline}
+a.hammersmithandcity:hover  {color: #113B92;    background: #E899A8; text-decoration: underline}
+a.jubilee:hover       {color: #FFF;     background: #686e72; text-decoration: underline}
+a.metropolitan:hover    {color: #FFF;     background: #893267; text-decoration: underline}
+a.northern:hover      {color: #FFF;     background: #000000; text-decoration: underline}
+a.piccadilly:hover      {color: #FFF;     background: #0450A1; text-decoration: underline}
+a.victoria:hover      {color: #FFF;     background: #009FE0; text-decoration: underline}
+a.waterlooandcity:hover   {color: #113B92;    background: #70C3CE; text-decoration: underline}
+a.dlr:hover   {color: #FFF;     background: #00BBB4; text-decoration: underline}
+a.overground:hover  {color: #FFF;     background: #F86C00; text-decoration: underline}
+
+
+
+.score {
+    border-radius:0.4em;
+    display: inline-block;
+    padding: 5px;
+    margin: 4px;
+    border: 1px solid #555;
+    font-family: helvetica;
+}
+.score .label {
+  display:inline;
+font-size: 1.5em;
+  font-family: scoreboard;
+}
+
+.score .value {
+  background:#fff;
+  color: #222;
+  border-radius:0.4em;
+  display: inline;
+  font-size: 2em;
+  padding: 2px;
+  font-family: scoreboard;
+}
+
+
+.bakerloo         {color: #FFF;     background: #AE6118;}
+.central          {color: #FFF;     background: #E41F1F;}
+.circle           {color: #113B92;    background: #F8D42D;}
+.district         {color: #FFF;     background: #007229;}
+.eastlondon {color: #113B92;    background: #F2AD41;}
+.hamersmithcity     {color: #113B92;    background: #E899A8;}
+.jubilee          {color: #FFF;     background: #686e72;}
+.metropolitan       {color: #FFF;     background: #893267;}
+.northern         {color: #FFF;     background: #000000;}
+.piccadilly         {color: #FFF;     background: #0450A1;}
+.victoria         {color: #FFF;     background: #009FE0;}
+.waterloocity      {color: #113B92;    background: #70C3CE;}
+.dlr            {color: #FFF;     background: #00BBB4;}
+.overground         {color: #FFF;     background: #F86C00;}
+
+#quickLinksList {
+  width: 100% !important;
+}
+
+#scoreboard, #header {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+#header {
+background: #eee;
+padding: 20px;
+}
+</style>
+<div id="header">
+
+<p>
+  We know your going to have a rubbish commute during the olympics so we decided to try to make you feel slightly better about being herded like cattle.
+</p>
+</p>
+<p>
+  We look at twitter to see who is saying what about each underground line, based on what people are saying we give each line a score.
+</p>
+<strong>
+Pleae note.  This is far from scientific.
+  </strong>
+</div>
+
+
+<div id="scoreboard">
+
+<br />
+<h1>Scoreboard</h1>
+<p>
+The worst score wins.
+</p>
+
+
+
+<%
+for(var event in events) {
+
+
+
+%>
+<div class="score  <%=event.toLowerCase().replace(/\s/g, '').replace('&', '')%>">
+  <div class="label">
+    <a href="http://127.0.0.1:8004/lines/<%=event%>"><%=event%></a>
+  </div>
+  <div class="value">
+    <%=events[event]%>
+  </div>
+</div>
+
+<%}%>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+Unlike the real Olympics we encourage cheating and carry out absolutely no drugs testing.
+
+If you have any problems or complaints please send them to : 
+
+<a href="mailto:mayor@london.gov.uk">mayor@london.gov.uk</a>
+
+  <img src="http://127.0.0.1:8004/public/boris.jpeg" />

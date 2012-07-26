@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" href="/public/graph.css" />
+
+    </head>
+    <body>
+<h1>Underground Olympics</h1>
+<h2>The official 2012 Underground Olympics.</h2>
+
+                <%
+                for(var event in events) {
+                    %><%=event + ":" +events[event]
+
+                    %>
+<%}%>
+
+
+<div>
+    We couldn't do it without out sponsors: 
+
+    <img src="http://www.adrants.com/images/burger-king_logo.jpg">
+</div>

@@ -1,0 +1,15 @@
+
+
+
+<%
+
+var c = tweets.length;
+while(c--) {
+	%>
+	<div><% var tweet  = JSON.parse(tweets[c])
+		%>	<%=tweet.text%> 	<%=tweet.score%>
+
+	</div>
+	<%
+}
+%>

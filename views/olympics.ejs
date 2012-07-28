@@ -10,11 +10,6 @@ p {
 }
 
 
-@font-face {
-font-family: scoreboard;
-src: local('Scuba OT')
-}
-
 /* Tube line colours */
 .bakerloo         {color: #FFF;     background: #AE6118;}
 .central          {color: #FFF;     background: #E41F1F;}
@@ -59,10 +54,16 @@ a.overground:hover  {color: #FFF;     background: #F86C00; text-decoration: unde
 .score .label {
   display:inline;
 font-size: 1.5em;
-  font-family: scoreboard;
+  font-family: arial;
+}
+
+.score .label a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .score .value {
+  font-family: arial;
   background:#fff;
   color: #222;
   border-radius:0.4em;
@@ -72,10 +73,12 @@ font-size: 1.5em;
   font-family: scoreboard;
 }
 
+.circle a           {color: #333 !important;  }
+
 
 .bakerloo         {color: #FFF;     background: #AE6118;}
 .central          {color: #FFF;     background: #E41F1F;}
-.circle           {color: #113B92;    background: #F8D42D;}
+.circle           {color: #333 !important;    background: #F8D42D;}
 .district         {color: #FFF;     background: #007229;}
 .eastlondon {color: #113B92;    background: #F2AD41;}
 .hamersmithcity     {color: #113B92;    background: #E899A8;}
@@ -105,15 +108,15 @@ padding: 20px;
 <div id="header">
 
 <p>
-  We know your going to have a rubbish commute during the olympics so we decided to try to make you feel slightly better about being herded like cattle.
+  We know your going to have a rubbish commute during the olympics so we decided to try to make you feel better about the whole experience.
 </p>
 </p>
 <p>
-  We look at twitter to see who is saying what about each underground line, based on what people are saying we give each line a score.
+  We look at twitter to see what's being said about each underground line and based on that we give each line a score.
 </p>
 
 <p>
-  The people with the shittiest commute will win a price. Honest.
+  The people with the worst commute win.
 </p>
 </div>
 
@@ -136,7 +139,7 @@ for(var event in events) {
 %>
 <div class="score  <%=event.toLowerCase().replace(/\s/g, '').replace('&', '')%>">
   <div class="label">
-    <a href="http://127.0.0.1:8004/lines/<%=event%>"><%=event%></a>
+    <a href="http://undergoundolympics.com/lines/<%=event%>"><%=event%></a>
   </div>
   <div class="value">
     <%=events[event]%>
@@ -144,7 +147,14 @@ for(var event in events) {
 </div>
 
 <%}%>
+<p>
+Unlike the real Olympics we encourage cheating and carry out absolutely no drugs testing.
 
+If you have any problems or complaints please send them to : 
+<p>
+<a href="mailto:mayor@london.gov.uk">mayor@london.gov.uk</a>
+<br />
+  <img src="http://undergroundolympics.com:8004/public/boris.jpeg" />
 
 
 </div>
@@ -156,10 +166,3 @@ for(var event in events) {
 
 
 
-Unlike the real Olympics we encourage cheating and carry out absolutely no drugs testing.
-
-If you have any problems or complaints please send them to : 
-
-<a href="mailto:mayor@london.gov.uk">mayor@london.gov.uk</a>
-
-  <img src="http://127.0.0.1:8004/public/boris.jpeg" />

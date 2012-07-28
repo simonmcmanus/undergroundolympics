@@ -1,4 +1,15 @@
 
+<style>
+body {
+	background:url(http://127.0.0.1:8004/public/army.jpg);
+}
+</style>
+<b>
+Unfortunately our contractor let us down at the last minute so we never got round to styling this page. 
+
+Here are the tweets anyhow.
+
+</b>
 
 
 <%
@@ -7,9 +18,22 @@ var c = tweets.length;
 while(c--) {
 	%>
 	<div><% var tweet  = JSON.parse(tweets[c])
-		%>	<%=tweet.text%> 	<%=tweet.score%>
+	console.log(tweet);
+	var picture = tweet.picture;
+	var user = tweet.user.screenname;
+	var id = tweet.id;
+	var date = tweet.time;
+		%>	
+		<%=tweet.text%> 	
+		<a href="http://twitter.com/<%=user.id%>"><%=picture%>
+		<%=user%></a>
+
+		<%=tweet.score%>
+		<a href="http://twitter.com/<%=tweet.id%>">link</a>
+		
 
 	</div>
+	<hr />
 	<%
 }
 %>

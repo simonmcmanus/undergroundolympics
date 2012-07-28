@@ -98,7 +98,7 @@ twit.stream('statuses/sample', function(stream) {
 });
 
 
-app.register('.ejs', ejs);
+app.engine('.ejs', ejs);
 app.get('/', function(req, res, next) {
     res.render('olympics.ejs', {
         events: events,

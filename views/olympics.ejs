@@ -108,16 +108,13 @@ padding: 20px;
 <div id="header">
 
 <p>
-  We know your going to have a rubbish commute during the olympics so we decided to try to make you feel slightly better about the whole experience.
+  We know you're going to have a rubbish commute during the olympics so we decided to try to make you feel slightly better about the whole experience.
 </p>
 </p>
 <p>
   We look at twitter to see what's being said about each underground line and based on that we give each line a score.
 </p>
 
-<p>
-  The people with the worst commute win.
-</p>
 </div>
 
 
@@ -125,8 +122,9 @@ padding: 20px;
 
 <br />
 <h1>Scoreboard</h1>
+
 <p>
-The worst score wins.
+  The people with the worst commute win.
 </p>
 
 
@@ -139,7 +137,7 @@ for(var event in events) {
 %>
 <div class="score  <%=event.toLowerCase().replace(/\s/g, '').replace('&', '')%>">
   <div class="label">
-    <a href="http://undergoundolympics.com/lines/<%=event%>"><%=event%></a>
+    <a href="http://undergroundolympics.com/lines/<%=event%>"><%=event%></a>
   </div>
   <div class="value">
     <%=events[event]%>
@@ -154,7 +152,7 @@ If you have any problems or complaints please send them to :
 <p>
 <a href="mailto:mayor@london.gov.uk">mayor@london.gov.uk</a>
 <br />
-  <img src="http://undergroundolympics.com:8004/public/boris.jpeg" />
+  <img src="http://undergroundolympics.com/public/boris.jpeg" />
 
 
 </div>

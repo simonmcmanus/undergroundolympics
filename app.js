@@ -69,20 +69,13 @@ twit.stream('statuses/sample', function(stream) {
     };
 
     stream.on('data', function (data) {
-        console.log(0);
         for(var event in events) {
-            if(data.text.indexOf(event) != -1 ) {
-                console.log(1);
+            if(data.text.indexOf(event+' Line') != -1 ) {
                 var score = analyze(data.text).score;
-                console.log(2);
                 events[event] = checkIsInt(events[event]) + score;
-                console.log(3);
                 rClient.set("score_"+event, events[event], redis.print);
-                console.log(4);
                 data.score = score;
-                console.log(5);
                 rClient.hset("tweet_"+event, JSON.stringify(data), data.id,  redis.print);
-                console.log(6);
                 changed = true;
             }
         }
@@ -126,4 +119,4 @@ app.get('/b', function(req, res, next) {
 
 
 app.use('/public', express['static'](__dirname + '/public/'));
-app.listen(8004);
+app.listen(80);

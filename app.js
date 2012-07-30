@@ -34,6 +34,12 @@ var events = { // of the underground olympic variety.
     'Waterloo & City':0  
 };
 
+var namedArray = [];
+for(var event in events) {
+    namedArray.push(event+' Line');
+}
+
+
 
 for(var event in events) {
     rClient.get("score_"+event, function(event , e, d) {
@@ -57,8 +63,8 @@ var lines = {
 
 
 
-
-twit.stream('statuses/sample', function(stream) {
+//namedArray.push('underground');
+twit.stream('user', {track: namedArray}, function(stream) {
     var changed = false;
     var checkIsInt =function(val) {
         if(typeof val === 'number') {
@@ -69,6 +75,7 @@ twit.stream('statuses/sample', function(stream) {
     };
 
     stream.on('data', function (data) {
+        console.log(data.text);
         for(var event in events) {
             if(data.text.indexOf(event+' Line') != -1 ) {
                 var score = analyze(data.text).score;

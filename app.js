@@ -126,4 +126,4 @@ app.get('/b', function(req, res, next) {
 
 
 app.use('/public', express['static'](__dirname + '/public/'));
-app.listen(80);
+app.listen(process.env.PORT || 80);
